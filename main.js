@@ -22,6 +22,7 @@ server.use((req, res, next) => {
   } else if (req.method === 'PATCH') {
     req.body.updatedAt = Date.now();
   }
+
   // Continue to JSON Server router
   next();
 });
