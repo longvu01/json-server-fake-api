@@ -39,8 +39,8 @@ router.render = (req, res) => {
     const result = {
       data: res.locals.data,
       pagination: {
-        _page: +queryParams._page ?? 1,
-        _limit: +queryParams._limit ?? 10,
+        _page: +queryParams._page || 1,
+        _limit: +queryParams._limit || 10,
         _totalRows: +totalCountHeader,
       },
     };
