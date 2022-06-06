@@ -1,0 +1,57 @@
+@baseUrl = http://localhost:3000/api
+
+@resourceName = products
+
+# @name getAll
+GET {{baseUrl}}/{{resourceName}}
+
+###
+
+# @name filterProducts
+GET {{baseUrl}}/{{resourceName}}?color=gold&price_gte=200
+
+###
+
+# @name pagination
+GET {{baseUrl}}/{{resourceName}}?_page=1&_limit=5
+
+###
+
+# @name sort
+GET {{baseUrl}}/{{resourceName}}?_sort=price&_order=asc
+
+###
+
+# @name filterLike
+GET {{baseUrl}}/{{resourceName}}?name_like=metal
+
+###
+
+# @name addNew
+POST {{baseUrl}}/{{resourceName}}
+Content-Type: application/json
+
+{
+    "categoryId": "f242116b-70e2-44d7-96f8-7a4950bfc704",
+    "name": "Tasty Granite Pizza",
+    "color": "blue",
+    "price": 886,
+    "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+    "thumbnailUrl": "http://placeimg.com/400/400"
+  }
+
+###
+
+# @name update
+PATCH {{baseUrl}}/{{resourceName}}/Hsq3roa
+Content-Type: application/json
+
+{
+    "name": "Tasty Granite Pizzaaaa",
+    "color": "red",
+    "price": 1712
+  }
+###
+
+# @name remove
+DELETE {{baseUrl}}/{{resourceName}}/2
